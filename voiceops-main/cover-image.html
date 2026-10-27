@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>VoiceOps — Cover (16:9)</title>
+<style>
+  /* Export: open in Chrome/Edge. Either (a) Ctrl+P → Save as PDF, Landscape, Margins None,
+     Background graphics ON → then export/crop to PNG; or (b) screenshot the card at 100% zoom.
+     The card is exactly 1600×900 (16:9). */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#010a07;display:flex;align-items:center;justify-content:center;min-height:100vh;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .cover{position:relative;width:1600px;height:900px;overflow:hidden;color:#eafaf1;
+    background:linear-gradient(135deg,#02140f 0%,#06231a 55%,#0a2a1e 100%);
+    display:flex;flex-direction:column;justify-content:center;padding:0 120px}
+  .cover::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(55% 55% at 82% 12%,rgba(134,213,25,.22),transparent 60%),
+               radial-gradient(45% 45% at 12% 92%,rgba(216,232,26,.16),transparent 60%)}
+  /* decorative constellation nodes */
+  .net{position:absolute;inset:0;opacity:.5}
+  .logo{display:flex;align-items:center;gap:20px;font-weight:800;font-size:38px;letter-spacing:-.01em;position:relative;z-index:2}
+  .dot{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#86d519,#b9e01b 50%,#d8e81a);
+    box-shadow:0 10px 30px rgba(134,213,25,.55);display:flex;align-items:center;justify-content:center}
+  .dot span{width:22px;height:22px;border-radius:50%;background:#02140f}
+  .kick{position:relative;z-index:2;color:#b9e01b;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    font-size:22px;margin:56px 0 20px}
+  h1{position:relative;z-index:2;font-size:112px;line-height:1.02;font-weight:800;letter-spacing:-.025em;margin:0}
+  .grad{background:linear-gradient(90deg,#86d519,#b9e01b 45%,#d8e81a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{position:relative;z-index:2;font-size:34px;line-height:1.4;color:#c7d8c9;margin-top:30px;max-width:1150px}
+  .pills{position:relative;z-index:2;display:flex;gap:16px;margin-top:44px;flex-wrap:wrap}
+  .pill{font-size:22px;color:#eafaf1;background:rgba(255,255,255,.07);border:1px solid #1b3a2c;border-radius:999px;padding:12px 24px}
+  .foot{position:absolute;z-index:2;left:120px;right:120px;bottom:52px;display:flex;justify-content:space-between;
+    align-items:center;color:#8aa79a;font-size:22px;letter-spacing:.02em}
+  @media print{ html,body{min-height:0;background:#fff} .cover{page-break-after:auto} }
+  @page{size:1600px 900px;margin:0}
+</style>
+</head>
+<body>
+  <div class="cover">
+    <svg class="net" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g stroke="#86d519" stroke-opacity="0.35" stroke-width="1.2">
+        <line x1="1180" y1="120" x2="1330" y2="210"/><line x1="1330" y1="210" x2="1250" y2="360"/>
+        <line x1="1250" y1="360" x2="1420" y2="410"/><line x1="1180" y1="120" x2="1250" y2="360"/>
+        <line x1="1330" y1="210" x2="1470" y2="150"/><line x1="1250" y1="360" x2="1360" y2="520"/>
+        <line x1="150" y1="700" x2="300" y2="760"/><line x1="300" y1="760" x2="250" y2="620"/>
+        <line x1="300" y1="760" x2="430" y2="820"/>
+      </g>
+      <g fill="#b9e01b">
+        <circle cx="1180" cy="120" r="6"/><circle cx="1330" cy="210" r="7"/><circle cx="1250" cy="360" r="6"/>
+        <circle cx="1420" cy="410" r="8" fill="#d8e81a"/><circle cx="1470" cy="150" r="5"/><circle cx="1360" cy="520" r="6" fill="#d8e81a"/>
+        <circle cx="150" cy="700" r="6"/><circle cx="300" cy="760" r="8" fill="#d8e81a"/><circle cx="250" cy="620" r="5"/><circle cx="430" cy="820" r="6"/>
+      </g>
+    </svg>
+
+    <div class="logo"><span class="dot"><span></span></span> VoiceOps</div>
+    <p class="kick">AI Factory Hackathon · Built on native.builder</p>
+    <h1>Turn call audio<br/>into <span class="grad">action.</span></h1>
+    <p class="sub">Upload a meeting → diarized transcript, an action board of items, risks &amp; decisions,
+      and a one-click follow-up email. In under a minute.</p>
+    <div class="pills">
+      <span class="pill">⚡ native.builder</span>
+      <span class="pill">🎙️ Speechmatics</span>
+      <span class="pill">🧠 AI/ML API</span>
+    </div>
+    <div class="foot"><span>voiceops · post-call intelligence</span><span>Data-driven apps with integrations</span></div>
+  </div>
+</body>
+</html>

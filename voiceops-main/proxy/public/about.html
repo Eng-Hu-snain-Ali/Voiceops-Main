@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — VoiceOps</title>
+<meta name="description" content="Why VoiceOps exists, who it's for, and how it was built for the AI Factory hackathon on native.builder." />
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="VoiceOps" />
+<meta property="og:title" content="About — VoiceOps" />
+<meta property="og:description" content="Why VoiceOps exists, who it's for, and how it was built for the AI Factory hackathon on native.builder." />
+<meta property="og:image" content="og-cover.png" />
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:alt" content="VoiceOps — post-call intelligence" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About — VoiceOps" />
+<meta name="twitter:description" content="Why VoiceOps exists, who it's for, and how it was built on native.builder." />
+<meta name="twitter:image" content="og-cover.png" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <canvas id="constellation" class="bg-particles" aria-hidden="true"></canvas>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span> VoiceOps</a>
+      <button class="navtoggle" aria-label="Menu">☰</button>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="about.html" class="active">About</a>
+        <a href="app.html">Launch App</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="sec" style="padding-bottom:40px">
+    <div class="wrap center">
+      <!-- <p class="kick">About</p> -->
+      <h1 class="kick h-sec">Meetings should end with action, not homework</h1>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap prose reveal">
+      <p>Every sales, customer-success and product team loses the same 15–20 minutes after every call:
+        writing up notes, digging out the commitments, and drafting the follow-up email from memory.
+        The work is important, it's repetitive, and it's exactly the kind of thing software should do.</p>
+
+      <p><strong>VoiceOps</strong> closes that gap. Drop in the call audio and it returns a diarized
+        transcript, an action board of tasks, risks and decisions, a read on the call's sentiment, and a
+        follow-up email you can send in one click — in about a minute.</p>
+
+      <h3 class="kick">Who it's for</h3>
+      <ul>
+        <li><strong>B2B sales</strong> running discovery and deal calls all day.</li>
+        <li><strong>Customer success</strong> managing renewals, QBRs and check-ins.</li>
+        <li><strong>Product teams and founders</strong> synthesizing user interviews.</li>
+      </ul>
+
+      <h3 class="kick">How it's built</h3>
+      <p>VoiceOps was built for the <strong>AI Factory hackathon</strong> (NativelyAI × lablab.ai)
+        primarily in <strong>native.builder</strong>, which powers the application experience, workflows,
+        data layer and deployment, while a small external engine handles the integrations native.builder
+        couldn't directly provide: <strong>Speechmatics</strong> for transcription, diarization and
+        sentiment, and an <strong>AI/ML API</strong> LLM for structured extraction of action items, risks,
+        decisions and the follow-up email. The extraction is deliberately strict — every item is tied to a
+        verbatim quote from the call, so VoiceOps never invents a commitment that wasn't made.</p>
+
+      <h3 class="kick">What's next</h3>
+      <ul>
+        <li>Push tasks straight into CRMs and trackers (HubSpot, Asana, Jira).</li>
+        <li>Firmographic enrichment (via Bright Data) for the companies and people named on a call.</li>
+        <li>A live, in-call mode that builds the board in real time.</li>
+        <li>Multi-language support across Speechmatics' 50+ languages.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap"><div class="band reveal">
+      <h2 class="h-sec">Try VoiceOps</h2>
+      <p class="lead" style="margin-bottom:28px">Load the demo meeting or run your own recording through it.</p>
+      <a href="app.html" class="btn btn-primary lg">Launch the app →</a>
+    </div></div>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span> VoiceOps</a>
+      <div class="fl"><a href="features.html">Features</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="app.html">Launch App</a></div>
+      <div class="cp">© 2026 VoiceOps · AI Factory Hackathon</div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VoiceOps — turn call audio into action in 60 seconds</title>
+<meta name="description" content="VoiceOps turns meeting and sales-call audio into a diarized transcript, an action board of items, risks and decisions, and a one-click follow-up email." />
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="VoiceOps" />
+<meta property="og:title" content="VoiceOps — turn call audio into action in 60 seconds" />
+<meta property="og:description" content="Turn meeting and sales-call audio into a diarized transcript, an action board of tasks, risks and decisions, and a one-click follow-up email." />
+<meta property="og:image" content="og-cover.png" />
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:alt" content="VoiceOps — post-call intelligence" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="VoiceOps — turn call audio into action in 60 seconds" />
+<meta name="twitter:description" content="Turn meeting and sales-call audio into a diarized transcript, an action board, and a one-click follow-up email." />
+<meta name="twitter:image" content="og-cover.png" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <canvas id="constellation" class="bg-particles" aria-hidden="true"></canvas>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span> VoiceOps</a>
+      <button class="navtoggle" aria-label="Menu">☰</button>
+      <div class="navlinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="features.html">Features</a>
+        <a href="about.html">About</a>
+        <a href="app.html">Launch App</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="orb-wrap">
+      <canvas id="orb" aria-hidden="true"></canvas>
+      <canvas id="orbflares" aria-hidden="true"></canvas>
+    </div>
+    <div class="veil"></div>
+    <div class="wrap">
+      <p class="kick">AI Factory Hackathon · built on native.builder</p>
+      <h1>Turn call audio into <span class="grad">action</span> in 60 seconds.</h1>
+      <p class="lead">Upload or record any meeting. VoiceOps gives you a speaker-diarized transcript,
+        an action board of tasks, risks and decisions, and a ready-to-send follow-up email — automatically.</p>
+      <div class="cta-row">
+        <a href="app.html" class="btn btn-primary lg">Launch the app →</a>
+        <a href="features.html" class="btn btn-ghost lg">See features</a>
+      </div>
+      <div class="badge-row">
+        <span class="chip">⚡ native.builder</span>
+        <span class="chip">🎙️ Speechmatics</span>
+        <span class="chip">🧠 AI/ML API</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HOW IT WORKS -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="center reveal">
+        <p class="kick">How it works</p>
+        <h2 class="h-sec">One upload → a complete post-call cockpit</h2>
+        <p class="lead">No plugins, no manual notes. Drop in the audio and watch the pipeline run.</p>
+      </div>
+      <div class="steps reveal" style="margin-top:52px">
+        <div class="stepc"><div class="n">STEP 01</div><h3>Ingest</h3><p>Upload an audio file or record the call right in your browser.</p></div>
+        <div class="stepc"><div class="n">STEP 02</div><h3>Transcribe</h3><p>Speechmatics returns a diarized transcript with summary and sentiment.</p></div>
+        <div class="stepc"><div class="n">STEP 03</div><h3>Extract</h3><p>An LLM pulls action items, risks and decisions into structured data.</p></div>
+        <div class="stepc"><div class="n">STEP 04</div><h3>Act</h3><p>Get an action board plus a follow-up email, ready to copy and send.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE PREVIEW -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g3">
+        <div class="card reveal"><div class="ico">🗂️</div><h3>Action board</h3><p>Every task with an owner and a due date, plus risks ranked by severity and the decisions the call locked in.</p></div>
+        <div class="card reveal"><div class="ico">🎙️</div><h3>Diarized transcript</h3><p>See who said what. Speechmatics separates speakers so the record is clear and searchable.</p></div>
+        <div class="card reveal"><div class="ico">✉️</div><h3>One-click follow-up</h3><p>A complete follow-up email drafted from the actual commitments — grounded in real quotes, no invented promises.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="sec-sm">
+    <div class="wrap">
+      <div class="stats reveal">
+        <div class="stat c"><div class="big">60s</div><p>From raw audio to a full action board and drafted email</p></div>
+        <div class="stat g"><div class="big">~16 hrs</div><p>Saved per week for a 10-rep team versus manual notes</p></div>
+        <div class="stat v"><div class="big">2</div><p>Live integrations: Speechmatics transcription + AI/ML API extraction</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POWERED BY -->
+  <section class="sec-sm">
+    <div class="wrap center">
+      <p class="kick reveal">Built with</p>
+      <div class="logos reveal" style="margin-top:22px">
+        <span class="logo-pill">⚡ native.builder</span>
+        <span class="logo-pill">🎙️ Speechmatics</span>
+        <span class="logo-pill">🧠 AI/ML API</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="band reveal">
+        <h2 class="h-sec">Never take call notes again.</h2>
+        <p class="lead" style="margin-bottom:28px">Try it now with the built-in demo meeting — no sign-up, no setup.</p>
+        <a href="app.html" class="btn btn-primary lg">Launch VoiceOps →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ft">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span> VoiceOps</a>
+      <div class="fl">
+        <a href="features.html">Features</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="app.html">Launch App</a>
+      </div>
+      <div class="cp">© 2026 VoiceOps · AI Factory Hackathon</div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script src="orb.js"></script>
+
+</body>
+</html>

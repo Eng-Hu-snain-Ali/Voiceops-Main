@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — VoiceOps</title>
+<meta name="description" content="Get in touch with the VoiceOps team. Questions, feedback, partnership inquiries — we'd love to hear from you." />
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="VoiceOps" />
+<meta property="og:title" content="Contact — VoiceOps" />
+<meta property="og:description" content="Questions, feedback, or partnership inquiries — we'd love to hear from you." />
+<meta property="og:image" content="og-cover.png" />
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:alt" content="VoiceOps — post-call intelligence" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contact — VoiceOps" />
+<meta name="twitter:description" content="Questions, feedback, or partnership inquiries — we'd love to hear from you." />
+<meta name="twitter:image" content="og-cover.png" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <canvas id="constellation" class="bg-particles" aria-hidden="true"></canvas>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span> VoiceOps</a>
+      <button class="navtoggle" aria-label="Menu">☰</button>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="about.html">About</a>
+        <a href="app.html">Launch App</a>
+        <a href="contact.html" class="cta active">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="sec" style="padding-bottom:40px">
+    <div class="wrap center">
+      <!-- <p class="kick">Contact</p> -->
+      <h1 class="kick h-sec">Let's talk</h1>
+      <p class="lead">Questions, feedback, or partnership inquiries — we'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <form class="form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="38cd6e99-a354-4a0d-8df3-2ad6785f16f8">
+        <input type="hidden" name="subject" value="New VoiceOps Contact Form Message">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1">
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary lg">Send message</button>
+        <div class="formnote" id="successMsg">Message sent! We'll get back to you soon.</div>
+        <div class="formnote" id="errorMsg">Something went wrong. Please try <a href="mailto:mibraheem45846@gmail.com" style="color:inherit;text-decoration:underline">emailing us directly</a>.</div>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec-sm">
+    <div class="wrap center reveal">
+      <p class="muted" style="font-size:15px">Or email us directly at <a href="mailto:mibraheem45846@gmail.com" style="color:var(--i);font-weight:600">mibraheem45846@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span> VoiceOps</a>
+      <div class="fl"><a href="features.html">Features</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="app.html">Launch App</a></div>
+      <div class="cp">© 2026 VoiceOps · AI Factory Hackathon</div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+  <script>
+    (function() {
+      var form = document.getElementById('contactForm');
+      var successMsg = document.getElementById('successMsg');
+      var errorMsg = document.getElementById('errorMsg');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        successMsg.classList.remove('ok');
+        errorMsg.classList.remove('bad');
+
+        var btn = form.querySelector('button[type=submit]');
+        var label = btn.textContent;
+        btn.disabled = true; btn.textContent = 'Sending…';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function(response) {
+          if (response.ok) {
+            successMsg.classList.add('ok');
+            form.reset();
+          } else {
+            errorMsg.classList.add('bad');
+          }
+        })
+        .catch(function() {
+          errorMsg.classList.add('bad');
+        })
+        .finally(function() {
+          btn.disabled = false; btn.textContent = label;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "voiceops",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VoiceOps — turn meeting/call audio into a diarized transcript, an action board (action items, risks, decisions) and a drafted follow-up email. Zero external dependencies.",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "verify": "node verify.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

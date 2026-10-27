@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VoiceOps — Pitch Deck</title>
+<style>
+  /* ---- Export to PDF: open in Chrome/Edge → Ctrl+P → Destination "Save as PDF" →
+     Layout Landscape → Margins None → enable "Background graphics". Each .slide is one page. ---- */
+  :root{
+    --bg:#02140f; --bg2:#06231a; --bg3:#0a2a1e;
+    --ink:#eafaf1; --muted:#8aa79a; --card:#0a1c15; --line:#1b3a2c;
+    --i:#86d519; --v:#b9e01b; --c:#d8e81a; --good:#34d399; --warn:#f59e0b; --bad:#fb7185;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#010a07;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:20px;padding:24px}
+  .slide{position:relative;width:1280px;height:720px;overflow:hidden;border-radius:18px;
+    background:linear-gradient(135deg,var(--bg) 0%,var(--bg2) 55%,var(--bg3) 100%);
+    box-shadow:0 20px 60px rgba(0,0,0,.5);padding:72px 84px;display:flex;flex-direction:column}
+  .slide::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(60% 60% at 85% 10%,rgba(134,213,25,.18),transparent 60%),
+               radial-gradient(50% 50% at 10% 95%,rgba(216,232,26,.14),transparent 60%)}
+  .kick{color:var(--v);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:15px;margin:0 0 14px}
+  h1{font-size:66px;line-height:1.04;margin:0;font-weight:800;letter-spacing:-.02em}
+  h2{font-size:44px;line-height:1.08;margin:0 0 18px;font-weight:800;letter-spacing:-.01em}
+  .grad{background:linear-gradient(90deg,var(--i),var(--v) 45%,var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+  p{font-size:24px;line-height:1.5;color:var(--ink);margin:0}
+  .muted{color:var(--muted)}
+  .big{font-size:30px;line-height:1.45}
+  .fill{flex:1}
+  .row{display:flex;gap:22px}
+  .col{flex:1}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px}
+  .card h3{margin:0 0 8px;font-size:22px}
+  .card p{font-size:19px;color:var(--muted);line-height:1.45}
+  ul{margin:10px 0 0;padding:0 0 0 4px;list-style:none}
+  li{font-size:24px;line-height:1.7;padding-left:38px;position:relative}
+  li::before{content:"";position:absolute;left:6px;top:12px;width:12px;height:12px;border-radius:3px;
+    background:linear-gradient(135deg,var(--i),var(--c))}
+  .foot{position:absolute;left:84px;right:84px;bottom:34px;display:flex;justify-content:space-between;
+    align-items:center;color:var(--muted);font-size:15px;letter-spacing:.02em}
+  .logo{display:flex;align-items:center;gap:14px;font-weight:800;font-size:24px}
+  .dot{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--i),var(--v) 50%,var(--c));
+    box-shadow:0 6px 20px rgba(134,213,25,.5);display:flex;align-items:center;justify-content:center}
+  .dot span{width:14px;height:14px;border-radius:50%;background:#02140f}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .pill{font-size:16px;color:var(--ink);background:rgba(255,255,255,.06);border:1px solid var(--line);
+    border-radius:999px;padding:8px 16px}
+  .stat{font-size:72px;font-weight:800;line-height:1;letter-spacing:-.02em}
+  .stat.g{color:var(--good)} .stat.c{color:var(--c)} .stat.v{color:var(--v)}
+  .flow{display:flex;align-items:stretch;gap:14px;margin-top:12px}
+  .step{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 18px;text-align:center}
+  .step .n{font-size:14px;color:var(--v);font-weight:700;letter-spacing:.12em}
+  .step .t{font-size:21px;font-weight:700;margin-top:6px}
+  .step .d{font-size:15px;color:var(--muted);margin-top:6px;line-height:1.4}
+  .arrow{display:flex;align-items:center;color:var(--muted);font-size:30px}
+  .badge{display:inline-block;background:rgba(52,211,153,.14);color:var(--good);border:1px solid rgba(52,211,153,.35);
+    border-radius:8px;padding:4px 12px;font-size:16px;font-weight:700}
+  @media print{
+    html,body{background:#fff}
+    .deck{gap:0;padding:0}
+    .slide{border-radius:0;box-shadow:none;page-break-after:always;break-after:page}
+    .slide:last-child{page-break-after:auto}
+  }
+  @page{size:1280px 720px;margin:0}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1 — TITLE -->
+  <section class="slide">
+    <div class="logo"><span class="dot"><span></span></span> VoiceOps</div>
+    <div class="fill" style="display:flex;flex-direction:column;justify-content:center">
+      <p class="kick">AI Factory Hackathon · native.builder</p>
+      <h1>Turn call audio into <span class="grad">action</span><br/>in 60 seconds.</h1>
+      <p class="big muted" style="margin-top:22px;max-width:900px">
+        Upload or record a meeting. Get a diarized transcript, an action board — action items,
+        risks, decisions — and a ready-to-send follow-up email. Automatically.
+      </p>
+      <div class="pills">
+        <span class="pill">⚡ Built on native.builder</span>
+        <span class="pill">🎙️ Speechmatics</span>
+        <span class="pill">🧠 AI/ML API</span>
+      </div>
+    </div>
+    <div class="foot"><span>VoiceOps</span><span>Data-driven apps with integrations</span></div>
+  </section>
+
+  <!-- 2 — PROBLEM -->
+  <section class="slide">
+    <p class="kick">The problem</p>
+    <h2>Every call ends with 20 minutes of homework.</h2>
+    <div class="row fill" style="align-items:center">
+      <div class="col">
+        <ul>
+          <li>Reps take <b>15–20 min of manual notes</b> after every call.</li>
+          <li>Action items get lost between the call and the CRM.</li>
+          <li>The follow-up email is written from memory — late, or never.</li>
+          <li>Managers have <b>zero structured signal</b> on risk across deals.</li>
+        </ul>
+      </div>
+      <div class="col" style="display:flex;gap:22px">
+        <div class="card" style="flex:1"><div class="stat v">3+</div><p style="margin-top:10px">hours/week of admin for a rep doing 10 calls/week</p></div>
+        <div class="card" style="flex:1"><div class="stat bad" style="color:var(--bad)">1 in 4</div><p style="margin-top:10px">follow-up commitments slip through the cracks</p></div>
+      </div>
+    </div>
+    <div class="foot"><span>VoiceOps</span><span>02</span></div>
+  </section>
+
+  <!-- 3 — SOLUTION -->
+  <section class="slide">
+    <p class="kick">The solution</p>
+    <h2>One upload → a complete post-call cockpit.</h2>
+    <div class="flow fill" style="align-items:center">
+      <div class="step"><div class="n">01</div><div class="t">Ingest</div><div class="d">Upload or record the call audio in the browser</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">02</div><div class="t">Transcribe</div><div class="d">Speechmatics: diarization + summary + sentiment</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">03</div><div class="t">Extract</div><div class="d">LLM pulls action items, risks, decisions</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">04</div><div class="t">Act</div><div class="d">Action board + one-click follow-up email</div></div>
+    </div>
+    <p class="big muted" style="margin-top:8px">Most tools stop at a transcript. VoiceOps delivers the <b style="color:var(--ink)">decisions and the email</b>.</p>
+    <div class="foot"><span>VoiceOps</span><span>03</span></div>
+  </section>
+
+  <!-- 4 — DEMO / WHAT YOU SEE -->
+  <section class="slide">
+    <p class="kick">The magic moment</p>
+    <h2>From "Speaker 2" to a signed-off next step.</h2>
+    <div class="row fill">
+      <div class="col card">
+        <h3>🎯 Action items — with owner &amp; due date</h3>
+        <ul style="margin-top:6px">
+          <li style="font-size:20px">Send SOC 2 report &amp; whitepaper — <b>Sarah, Aug 13</b></li>
+          <li style="font-size:20px">25-seat pricing proposal — <b>Sarah, Aug 21</b></li>
+          <li style="font-size:20px">Loop in CISO Elena — <b>Marcus</b></li>
+        </ul>
+      </div>
+      <div class="col card">
+        <h3>⚠️ Risks, flagged &amp; ranked</h3>
+        <ul style="margin-top:6px">
+          <li style="font-size:20px">Budget locked this quarter <span class="badge" style="background:rgba(251,113,133,.14);color:var(--bad);border-color:rgba(251,113,133,.35)">high</span></li>
+          <li style="font-size:20px">Legacy Oracle migration <span class="badge" style="background:rgba(245,158,11,.14);color:var(--warn);border-color:rgba(245,158,11,.35)">med</span></li>
+          <li style="font-size:20px">Competitor: DataBridge <span class="badge" style="background:rgba(245,158,11,.14);color:var(--warn);border-color:rgba(245,158,11,.35)">med</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="big" style="margin-top:20px">…then <b class="grad">"Generate follow-up"</b> writes the whole email. One click, ready to send.</p>
+    <div class="foot"><span>VoiceOps</span><span>04</span></div>
+  </section>
+
+  <!-- 5 — HOW IT WORKS -->
+  <section class="slide">
+    <p class="kick">How it works</p>
+    <h2>Two live integrations, one clean flow.</h2>
+    <div class="row fill">
+      <div class="col card">
+        <h3 style="color:var(--c)">🎙️ Speechmatics</h3>
+        <p>Batch transcription with <b>speaker diarization</b>, an auto <b>summary</b>, and <b>sentiment</b>. This is the "who-said-what" backbone.</p>
+      </div>
+      <div class="col card">
+        <h3 style="color:var(--v)">🧠 AI/ML API (LLM)</h3>
+        <p>Turns the diarized transcript into <b>structured JSON</b> — action items, risks, decisions — and drafts the email. Strict schema, repair fallback.</p>
+      </div>
+      <div class="col card">
+        <h3 style="color:var(--i)">🌐 Bright Data <span style="font-size:.55em;opacity:.75;font-weight:700">· roadmap</span></h3>
+        <p><b>Planned, not yet wired:</b> firmographic enrichment for the companies and people named on the call.</p>
+      </div>
+    </div>
+    <p class="big muted" style="margin-top:22px">
+      <span class="badge">Built on native.builder</span>
+      &nbsp; native.builder hosts the deployed app; a custom-code block calls our zero-dependency AI engine.
+    </p>
+    <div class="foot"><span>VoiceOps</span><span>05</span></div>
+  </section>
+
+  <!-- 6 — BUSINESS VALUE -->
+  <section class="slide">
+    <p class="kick">Business value</p>
+    <h2>20 minutes of admin → under 60 seconds.</h2>
+    <div class="row fill" style="align-items:center">
+      <div class="col" style="display:flex;flex-direction:column;gap:22px">
+        <div class="card"><div class="stat g">~16 hrs</div><p style="margin-top:10px">saved per week for a 10-rep team</p></div>
+        <div class="card"><div class="stat c">≈ $40k</div><p style="margin-top:10px">annual capacity reclaimed at a loaded rate</p></div>
+      </div>
+      <div class="col">
+        <h3 style="font-size:26px;margin:0 0 12px">Who it's for</h3>
+        <ul>
+          <li><b>B2B sales</b> — discovery &amp; deal calls</li>
+          <li><b>Customer success</b> — renewals &amp; QBRs</li>
+          <li><b>Product / founders</b> — user interviews</li>
+        </ul>
+        <p class="muted" style="margin-top:18px;font-size:20px">Land as a solo tool, expand to the whole revenue org.</p>
+      </div>
+    </div>
+    <div class="foot"><span>VoiceOps</span><span>06</span></div>
+  </section>
+
+  <!-- 7 — ORIGINALITY / WHY WE WIN -->
+  <section class="slide">
+    <p class="kick">Why it stands out</p>
+    <h2>Transcription is the input, not the product.</h2>
+    <div class="row fill">
+      <div class="col card">
+        <h3 class="muted" style="color:var(--muted)">Everyone else</h3>
+        <ul style="margin-top:6px">
+          <li style="font-size:21px">Gives you a transcript</li>
+          <li style="font-size:21px">Maybe a generic summary</li>
+          <li style="font-size:21px">You still do the follow-up</li>
+        </ul>
+      </div>
+      <div class="col card" style="border-color:rgba(52,211,153,.4)">
+        <h3 style="color:var(--good)">VoiceOps</h3>
+        <ul style="margin-top:6px">
+          <li style="font-size:21px"><b>Owned action items</b> — who, what, when</li>
+          <li style="font-size:21px"><b>Risk radar</b> ranked by severity</li>
+          <li style="font-size:21px"><b>The email is written for you</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="big" style="margin-top:22px">Grounded in real quotes from the call — <b class="grad">no hallucinated commitments.</b></p>
+    <div class="foot"><span>VoiceOps</span><span>07</span></div>
+  </section>
+
+  <!-- 8 — CLOSE -->
+  <section class="slide">
+    <div class="logo"><span class="dot"><span></span></span> VoiceOps</div>
+    <div class="fill" style="display:flex;flex-direction:column;justify-content:center">
+      <h1>Never take call notes <span class="grad">again.</span></h1>
+      <p class="big muted" style="margin-top:20px;max-width:900px">
+        Live demo: <b style="color:var(--ink)">[ your public URL ]</b><br/>
+        Built primarily on native.builder · transcription by Speechmatics.
+      </p>
+      <div class="pills">
+        <span class="pill">⚡ native.builder</span>
+        <span class="pill">🎙️ Speechmatics</span>
+        <span class="pill">🧠 AI/ML API</span>
+      </div>
+    </div>
+    <div class="foot"><span>VoiceOps — AI Factory Hackathon 2026</span><span>Thank you</span></div>
+  </section>
+
+</div>
+</body>
+</html>

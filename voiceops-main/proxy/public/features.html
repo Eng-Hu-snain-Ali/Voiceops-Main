@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Features — VoiceOps</title>
+<meta name="description" content="What VoiceOps does: diarized transcription, an action board of items, risks and decisions, sentiment, and a one-click follow-up email." />
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="VoiceOps" />
+<meta property="og:title" content="Features — VoiceOps" />
+<meta property="og:description" content="Diarized transcription, an action board of items, risks and decisions, sentiment, and a one-click follow-up email." />
+<meta property="og:image" content="og-cover.png" />
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:alt" content="VoiceOps — post-call intelligence" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Features — VoiceOps" />
+<meta name="twitter:description" content="Diarized transcription, an action board of items, risks and decisions, sentiment, and a one-click follow-up email." />
+<meta name="twitter:image" content="og-cover.png" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <canvas id="constellation" class="bg-particles" aria-hidden="true"></canvas>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span> VoiceOps</a>
+      <button class="navtoggle" aria-label="Menu">☰</button>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="features.html" class="active">Features</a>
+        <a href="about.html">About</a>
+        <a href="app.html">Launch App</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="sec" style="padding-bottom:40px">
+    <div class="wrap center">
+      <!-- <p class="kick">Features</p> -->
+      <h1 class="kick h-sec">Everything you need after the call</h1>
+      <p class="lead">VoiceOps goes past transcription to the work that actually follows a meeting —
+        the tasks, the risks, the decisions, and the email.</p>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g2">
+        <div class="card reveal"><div class="ico">🎙️</div><h3>Speaker-diarized transcript</h3>
+          <p>Speechmatics separates each speaker so you get a clean "who said what" record — not a wall of text. Custom vocabulary keeps brand names and acronyms accurate.</p></div>
+        <div class="card reveal"><div class="ico">🗂️</div><h3>Action items with owners &amp; dates</h3>
+          <p>Every commitment becomes a card with an owner and a due date, resolved from phrases like "by Thursday" against the real meeting date.</p></div>
+        <div class="card reveal"><div class="ico">⚠️</div><h3>Risk radar</h3>
+          <p>Objections, blockers and competitive threats are surfaced and ranked low / medium / high, so nothing quietly derails the deal.</p></div>
+        <div class="card reveal"><div class="ico">✅</div><h3>Decisions log</h3>
+          <p>The things you actually agreed on, captured with the verbatim quote that backs each one.</p></div>
+        <div class="card reveal"><div class="ico">🌡️</div><h3>Call sentiment</h3>
+          <p>A quick "call temperature" read — positive, neutral, negative or conditional — from Speechmatics sentiment analysis.</p></div>
+        <div class="card reveal"><div class="ico">✉️</div><h3>One-click follow-up email</h3>
+          <p>A complete, ready-to-send recap email drawn only from the agreed next steps — grounded in real quotes, never invented.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section class="sec-sm">
+    <div class="wrap">
+      <div class="center reveal"><p class="kick">Under the hood</p><h2 class="h-sec">Two live integrations — and what's next</h2></div>
+      <div class="grid g3 reveal" style="margin-top:44px">
+        <div class="card"><div class="ico">🎙️</div><h3>Speechmatics</h3><p>Batch transcription with diarization, summarization and sentiment — the accurate backbone of every result.</p></div>
+        <div class="card"><div class="ico">🧠</div><h3>AI/ML API</h3><p>An OpenAI-compatible LLM turns the transcript into strict JSON: action items, risks, decisions and the email.</p></div>
+        <div class="card"><div class="ico">🌐</div><h3>Bright Data <span class="soon">Roadmap</span></h3><p>Planned: firmographic enrichment that will add real context for the companies and people named on a call. Not wired up yet.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap"><div class="band reveal">
+      <h2 class="h-sec">See it on a real call</h2>
+      <p class="lead" style="margin-bottom:28px">Load the built-in demo meeting, or upload your own audio.</p>
+      <a href="app.html" class="btn btn-primary lg">Launch the app →</a>
+    </div></div>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span> VoiceOps</a>
+      <div class="fl"><a href="features.html">Features</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="app.html">Launch App</a></div>
+      <div class="cp">© 2026 VoiceOps · AI Factory Hackathon</div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>
